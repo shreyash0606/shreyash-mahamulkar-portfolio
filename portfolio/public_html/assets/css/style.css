@@ -11613,7 +11613,7 @@ pre .code {
 }
 
 .about-section .about-card {
-  padding: 60px;
+  padding: 20px;
   border-right: 1px solid #dee2e6;
 }
 
@@ -11690,4 +11690,10 @@ pre .code {
   color: #db750d !important;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+@media (min-width:992px) {
+  .about-section .about-card {
+    padding: 60px;
+  }
 }
