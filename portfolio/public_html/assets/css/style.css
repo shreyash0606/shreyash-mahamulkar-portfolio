@@ -50,6 +50,18 @@
   box-sizing: border-box;
 }
 
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -11253,6 +11265,8 @@ p {
   -webkit-transition: 0.5s;
 }
 
+
+
 .portfolio .portfolio-container .portfolio-item .content-holder .title {
   font-size: 22px;
   font-weight: 600;
@@ -11267,7 +11281,20 @@ p {
 .portfolio .portfolio-container .portfolio-item:hover .content-holder {
   opacity: 1;
   visibility: visible;
+
 }
+.portfolio .portfolio-container .portfolio-item:hover img {
+  transform: scale(2);
+  transition: all 1s;
+  
+  filter: grayscale(100%);
+}
+
+.portfolio .portfolio-container .portfolio-item img {
+  filter: grayscale(0);
+}
+
+
 
 /* blog wrapper */
 .blog-card {
@@ -11522,7 +11549,7 @@ pre .code {
 }
 
 .header .header-content {
-  width: 100%;
+  /* width: 100%; */
   position: absolute;
   left: 0;
   top: 55%;
@@ -11542,7 +11569,14 @@ pre .code {
   font-weight: bold;
   line-height: 1;
   margin-bottom: 25px;
+  width: fit-content;
   color: inherit;
+  overflow: hidden; 
+  border-right: .07em solid #db750d; 
+  white-space: nowrap;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
 }
 
 .header .header-content .header-mono {
